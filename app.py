@@ -1,7 +1,9 @@
 import streamlit as st                  
 import pandas as pd 
 import io
-from src.college_predictor.clg_selector import load_data,filter_colleges
+from src.college_predictor.clg_selector import filter_colleges
+
+
 
 def display_results(user_name, filtered_colleges,rank, selected_districts,selected_branches):
     
@@ -47,7 +49,7 @@ def main():
     st.subheader("Based on 2022-23 Ranking Cutoff ")
 
 
-    college_data = load_data()
+    college_data = pd.read_excel("APEAPCET_Cleaned_data.xlsx") 
 
     if college_data is not None:
         columns = college_data.columns
