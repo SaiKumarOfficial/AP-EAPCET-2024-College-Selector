@@ -30,8 +30,9 @@ def display_results(user_name, filtered_colleges,rank, selected_districts,select
             output = io.BytesIO()
             writer = pd.ExcelWriter(output, engine='xlsxwriter')
             df.to_excel(writer, index=False, sheet_name='Filtered_Colleges')
-            writer.save()
+            writer.close()
             processed_data = output.getvalue()
+            
             return processed_data
 
         # Provide a download button for the Excel file
