@@ -29,7 +29,7 @@ def display_results(user_name, filtered_colleges,rank, selected_districts,select
         def to_excel(df):
             output = io.BytesIO()
             writer = pd.ExcelWriter(output, engine='xlsxwriter')
-            df.to_excel(writer, index=False, sheet_name='Sheet1')
+            df.to_excel(writer, index=False, sheet_name='Filtered_Colleges')
             writer.save()
             processed_data = output.getvalue()
             return processed_data
