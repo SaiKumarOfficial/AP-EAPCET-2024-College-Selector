@@ -46,8 +46,14 @@ def main():
     st.title("AP EAPCET 2024 College Selector")
     st.subheader("Based on 2022-23 Ranking Cutoff ")
 
+
     college_data = load_data()
-    columns = college_data.columns
+
+    if college_data is not None:
+        columns = college_data.columns
+    else:
+        st.error("Error: College data file not found. Please ensure the file exists.")
+    
     category = list(columns[9:27])
     user_name = st.session_state.get("user_name", None)
     eamcet_rank = st.number_input("Enter you Eamcet Rank", min_value=1)
