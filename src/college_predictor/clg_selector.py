@@ -8,7 +8,7 @@ def load_data():
     """
 
     try:
-        df = pd.read_excel("C:\\Users\\Sheela Sai kumar\\Documents\\2-important\\Eapcet_webapp\\AP-Engineering-College-Predictor-2024\\data\\APEAPCET_Cleaned_data.xlsx")  # Replace with your file path
+        df = pd.read_excel("data\APEAPCET_Cleaned_data.xlsx")  # Replace with your file path
         return df
     except FileNotFoundError:
         return None
